@@ -1,10 +1,11 @@
+
 bool loesesudoku(List<String> lines) {
   int groesse = lines.length;
   int blockgroesse = findeblockgroesse(groesse);
-  if (blockgroesse == 0) return false;
-
+  if (blockgroesse == 0) {
+    return false;
+  }
   bool hatSichGeaendert = true;
-
   while (hatSichGeaendert) {
     hatSichGeaendert = false;
     for (int zeilenindex = 0; zeilenindex < groesse; zeilenindex++) {
