@@ -1,8 +1,9 @@
+
 bool loesesudoku(List<String> lines) {
   int groesse = lines.length;
   int blockgroesse = findeblockgroesse(groesse);
   if (blockgroesse == 0) {
-    return true;
+    return false;
   }
   bool hatSichGeaendert = true;
   while (hatSichGeaendert) {
@@ -80,6 +81,3 @@ int findeblockgroesse(int groesse) {
   print("Das Sudoku ist kein richtiges Quadrat");
   return 0;
 }
-
-
-
