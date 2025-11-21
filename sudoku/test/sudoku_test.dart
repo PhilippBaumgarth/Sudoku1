@@ -121,7 +121,7 @@ void main() {
     assert(loesung == 3, 'findeblockgroesse gibt die falsche groesse des blocks zurück');
   });
 
-    test('findeblockgroesse mit richtiger groesse', () {
+  test('findeblockgroesse mit richtiger groesse', () {
     int groesse = 5;
     int loesung = findeblockgroesse(groesse);
     assert(loesung == 0, 'findeblockgroesse sollte eigentlich eine 0 zurückgeben');
