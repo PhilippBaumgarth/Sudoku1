@@ -2,6 +2,7 @@ bool loesesudoku(List<String> lines) {
   int groesse = lines.length;
   int blockgroesse = findeblockgroesse(groesse);
   if (blockgroesse == 0) {
+    print("Das Sudoku ist kein richtiges Quadrat");
     return false;
   }
   for (int i = 0; i < groesse; i++) {
@@ -78,6 +79,6 @@ int findeblockgroesse(int groesse) {
       return i;
     }
   }
-  print("Das Sudoku ist kein richtiges Quadrat");
+  
   return 0;
 }

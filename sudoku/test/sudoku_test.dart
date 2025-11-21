@@ -81,7 +81,7 @@ void main() {
       '0,0,0,0,8,0,0,7,9'
     ];
     bool loesung = istzahlmoeglich(lines, 1, 4, 1, 3);
-    assert(loesung == false, 'Istzahlmoeglich ');
+    assert(loesung == false, 'Istzahlmoeglich sollte eigentlich zurueckgeben dass die zahl in der zeile nicht möglich ist');
   });
 
   test('istzahlmoeglich mit falscher zahl in spalte', () {
@@ -97,7 +97,7 @@ void main() {
       '0,0,0,0,8,0,0,7,9'
     ];
     bool loesung = istzahlmoeglich(lines, 7, 0, 7, 3);
-    assert(loesung == false, 'Istzahlmoeglich ');
+    assert(loesung == false, 'Istzahlmoeglich sollte eigentlich zurueckgeben dass die zahl in der spalte nicht möglich ist');
   });
   test('istzahlmoeglich mit falscher zahl in block', () {
     List<String> lines = [
@@ -112,7 +112,18 @@ void main() {
       '0,0,0,0,8,0,0,7,9'
     ];
     bool loesung = istzahlmoeglich(lines, 0, 2, 6, 3);
-    assert(loesung == false, 'Istzahlmoeglich ');
+    assert(loesung == false, 'Istzahlmoeglich sollte eigentlich zurueckgeben dass die zahl im block nicht möglich ist');
   });
 
+  test('findeblockgroesse mit richtiger groesse', () {
+    int groesse = 9;
+    int loesung = findeblockgroesse(groesse);
+    assert(loesung == 3, 'findeblockgroesse gibt die falsche groesse des blocks zurück');
+  });
+
+    test('findeblockgroesse mit richtiger groesse', () {
+    int groesse = 5;
+    int loesung = findeblockgroesse(groesse);
+    assert(loesung == 0, 'findeblockgroesse sollte eigentlich eine 0 zurückgeben');
+  });
 }
