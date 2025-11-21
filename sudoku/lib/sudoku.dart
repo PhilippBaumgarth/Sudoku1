@@ -4,6 +4,11 @@ bool loesesudoku(List<String> lines) {
   if (blockgroesse == 0) {
     return false;
   }
+  for (int i = 0; i < groesse; i++) {
+    if (lines[i].split(',').length != groesse) {
+      return false;
+    }
+  }
   bool hatSichGeaendert = true;
   while (hatSichGeaendert) {
     hatSichGeaendert = false;
@@ -58,6 +63,7 @@ bool istzahlmoeglich(List<String> lines,int zeilenindex,int spaltenindex,int zah
   return true;
 }
 
+//einzelne blockgroesse finden
 int findeblockgroesse(int groesse) {
   for (int i = 1; i * i <= groesse; i++) {
     if (i * i == groesse) {
