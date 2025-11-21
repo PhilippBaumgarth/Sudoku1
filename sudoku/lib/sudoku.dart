@@ -35,7 +35,9 @@ bool loesesudoku(List<String> lines) {
   }
   // prüfen, ob vollständig gelöst
   for (int i = 0; i < groesse; i++) {
-    if (lines[i].contains('0')) return false;
+    if (lines[i].contains('0')) {
+      return false;
+    }
   }
   return true;
 }
@@ -45,11 +47,15 @@ bool istzahlmoeglich(List<String> lines,int zeilenindex,int spaltenindex,int zah
   // Zeile prüfen
   List<String> zeile = lines[zeilenindex].split(',');
   for (int i = 0; i < groesse; i++) {
-    if (int.parse(zeile[i]) == zahl) return false;
+    if (int.parse(zeile[i]) == zahl) {
+      return false;
+    }
   }
   // Spalte prüfen
   for (int r = 0; r < groesse; r++) {
-    if (int.parse(lines[r].split(',')[spaltenindex]) == zahl) return false;
+    if (int.parse(lines[r].split(',')[spaltenindex]) == zahl) { 
+      return false;
+    }
   }
   // Block prüfen
   int startzeile = (zeilenindex ~/ blockgroesse) * blockgroesse;
@@ -57,7 +63,9 @@ bool istzahlmoeglich(List<String> lines,int zeilenindex,int spaltenindex,int zah
   for (int r = 0; r < blockgroesse; r++) {
     List<String> blockzeile = lines[startzeile + r].split(',');
     for (int c = 0; c < blockgroesse; c++) {
-      if (int.parse(blockzeile[startspalte + c]) == zahl) return false;
+      if (int.parse(blockzeile[startspalte + c]) == zahl) {
+        return false;
+      }
     }
   }
   return true;

@@ -52,5 +52,67 @@ void main() {
     assert(loesung == false, 'loesesudoku erkennt nicht das es nicht loesbar ist');
   });
 
-  
+  test('istzahlmoeglich mit richitger zahl', () {
+    List<String> lines = [
+      '5,3,0,0,7,0,0,0,0',
+      '6,0,0,1,9,5,0,0,0',
+      '0,9,8,0,0,0,0,6,0',
+      '8,0,0,0,6,0,0,0,3',
+      '4,0,0,8,0,3,0,0,1',
+      '7,0,0,0,2,0,0,0,6',
+      '0,6,0,0,0,0,2,8,0',
+      '0,0,0,4,1,9,0,0,5',
+      '0,0,0,0,8,0,0,7,9'
+    ];
+    bool loesung = istzahlmoeglich(lines, 1, 1, 2, 3);
+    assert(loesung == true, 'Istzahlmoeglich sagt die zahl passt nicht obwohl sie passt');
+  });
+
+  test('istzahlmoeglich mit falscher zahl in zeile', () {
+    List<String> lines = [
+      '5,3,0,0,7,0,0,0,0',
+      '6,0,0,1,9,5,0,0,0',
+      '0,9,8,0,0,0,0,6,0',
+      '8,0,0,0,6,0,0,0,3',
+      '4,0,0,8,0,3,0,0,1',
+      '7,0,0,0,2,0,0,0,6',
+      '0,6,0,0,0,0,2,8,0',
+      '0,0,0,4,1,9,0,0,5',
+      '0,0,0,0,8,0,0,7,9'
+    ];
+    bool loesung = istzahlmoeglich(lines, 1, 4, 1, 3);
+    assert(loesung == false, 'Istzahlmoeglich ');
+  });
+
+  test('istzahlmoeglich mit falscher zahl in spalte', () {
+    List<String> lines = [
+      '5,3,0,0,7,0,0,0,0',
+      '6,0,0,1,9,5,0,0,0',
+      '0,9,8,0,0,0,0,6,0',
+      '8,0,0,0,6,0,0,0,3',
+      '4,0,0,8,0,3,0,0,1',
+      '7,0,0,0,2,0,0,0,6',
+      '0,6,0,0,0,0,2,8,0',
+      '0,0,0,4,1,9,0,0,5',
+      '0,0,0,0,8,0,0,7,9'
+    ];
+    bool loesung = istzahlmoeglich(lines, 7, 0, 7, 3);
+    assert(loesung == false, 'Istzahlmoeglich ');
+  });
+  test('istzahlmoeglich mit falscher zahl in block', () {
+    List<String> lines = [
+      '5,3,0,0,7,0,0,0,0',
+      '6,0,0,1,9,5,0,0,0',
+      '0,9,8,0,0,0,0,6,0',
+      '8,0,0,0,6,0,0,0,3',
+      '4,0,0,8,0,3,0,0,1',
+      '7,0,0,0,2,0,0,0,6',
+      '0,6,0,0,0,0,2,8,0',
+      '0,0,0,4,1,9,0,0,5',
+      '0,0,0,0,8,0,0,7,9'
+    ];
+    bool loesung = istzahlmoeglich(lines, 0, 2, 6, 3);
+    assert(loesung == false, 'Istzahlmoeglich ');
+  });
+
 }
