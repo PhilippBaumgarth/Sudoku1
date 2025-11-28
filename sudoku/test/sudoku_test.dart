@@ -28,7 +28,7 @@ void loesesudokueinfach() {
   ];
 
   bool loesung = loesesudoku(lines);
-  assert(loesung == true, 'loesesudoku sollte das Sudoku loesen');
+  assert(loesung, 'loesesudoku sollte das Sudoku loesen');
 }
 
 void loesesudokugroessefalsch() {
@@ -84,7 +84,7 @@ void istzahlmoeglichrichtig() {
   }
 
   bool loesung = istzahlmoeglich(feld, 1, 1, 2, 3);
-  assert(loesung == true, 'zahl sollte moeglich sein');
+  assert(loesung, 'zahl sollte moeglich sein');
 }
 
 void istzahlmoeglichzeilefalsch() {
